@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
@@ -138,7 +135,7 @@
         <artifactId>cobertura-maven-plugin</artifactId>
         <version>${cobertura.version}</version>
         <configuration>
-          <check />
+          <check/>
         </configuration>
         <executions>
           <execution>
@@ -199,6 +196,30 @@
           </dependency>
         </dependencies>
       </plugin>
+    
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId>
+        <version>3.5.28</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>resource</goal>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>
+      
+        <configuration>
+          <resources>
+            <labels>
+              <all>
+                <space>firstSpace</space>
+              </all>
+            </labels>
+          </resources>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <reporting>
@@ -212,7 +233,7 @@
           <formats>
             <format>html</format>
           </formats>
-          <check />
+          <check/>
         </configuration>
       </plugin>
     </plugins>
